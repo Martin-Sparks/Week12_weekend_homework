@@ -12,7 +12,7 @@ public class TubaTest {
 
         @Before
         public void before(){
-            tuba1 = new Tuba("Les Paul", "Electric", 1000,1300);
+            tuba1 = new Tuba("Les Paul", "Electric", 1000,1300, 15);
         }
 
         @Test
@@ -58,5 +58,22 @@ public class TubaTest {
             tuba1.setSellvalue(1400);
             assertEquals(1400, tuba1.getSellvalue());
         }
+
+    @Test
+    public void getSound(){
+        String results = tuba1.play("B");
+        assertEquals("Play sound B", results);
+    }
+
+    @Test
+    public void getValves(){
+        assertEquals(15, tuba1.getValves());
+    }
+
+    @Test
+    public void setValves(){
+        tuba1.setValves(10);
+        assertEquals(10, tuba1.getValves());
+    }
 
     }

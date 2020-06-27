@@ -1,8 +1,25 @@
 package instruments;
 
-public class Guitar extends Stringed {
+import Behaviours.IPlay;
 
-    public Guitar(String name, String type, int buyvalue, int sellvalue) {
+public class Guitar extends Stringed implements IPlay {
+
+    private int strings;
+
+    public Guitar(String name, String type, int buyvalue, int sellvalue, int strings) {
         super(name, type, buyvalue, sellvalue);
+        this.strings = strings;
+    }
+
+    public String play(String sound) {
+        return "Play sound " + sound;
+    }
+
+    public int getStrings() {
+        return this.strings;
+    }
+
+    public int setStrings(int i){
+        return this.strings = i;
     }
 }

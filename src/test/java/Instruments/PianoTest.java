@@ -13,7 +13,7 @@ public class PianoTest {
 
         @Before
         public void before(){
-            piano1 = new Piano("Les Paul", "Electric", 1000,1300);
+            piano1 = new Piano("Les Paul", "Electric", 1000,1300, 72);
         }
 
         @Test
@@ -59,6 +59,23 @@ public class PianoTest {
             piano1.setSellvalue(1400);
             assertEquals(1400, piano1.getSellvalue());
         }
+
+    @Test
+    public void getSound(){
+        String results = piano1.play("C#");
+        assertEquals("Play keys C#", results);
+    }
+
+    @Test
+    public void getKeys(){
+            assertEquals(72, piano1.getKeys());
+    }
+
+    @Test
+    public void setKeys(){
+            piano1.setKeys(10);
+            assertEquals(10, piano1.getKeys());
+    }
 
     }
 

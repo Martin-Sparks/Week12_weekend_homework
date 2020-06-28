@@ -2,7 +2,7 @@ package instruments;
 
 import Behaviours.IPlay;
 
-public class Tuba extends Instrument implements IPlay {
+public class Tuba extends Brass implements IPlay {
 
     private int valves;
 

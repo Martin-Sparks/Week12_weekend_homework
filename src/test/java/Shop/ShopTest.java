@@ -14,6 +14,8 @@ public class ShopTest {
     Shop shop;
     Guitar guitar;
     ArrayList<Instrument> stockForSale;
+    Instrument instrument;
+    Instrument guitar1;
 
     @Before
     public void before(){
@@ -21,10 +23,12 @@ public class ShopTest {
         shop = new Shop(1,stockForSale);
     }
 
-//    @Test
-//    public void getMarkUp() {
-//        assertEquals();
-//    }
+    @Test
+    public void getMarkUp() {
+        instrument = new Instrument("Les Paul", "bla", 1000, 1100) {
+        };
+        assertEquals(100, shop.markUp(instrument));
+    }
 
     @Test
     public void canAddItem(){

@@ -16,13 +16,8 @@ public class Shop implements ISell {
         this.stockForSale = new ArrayList<Instrument>();
     }
 
-
     public void addToStock(Instrument instrument){
         stockForSale.add(instrument);
-    }
-
-    public int markUp() {
-        return 0;
     }
 
     public int checkStock() {
@@ -31,5 +26,11 @@ public class Shop implements ISell {
 
     public void removeStock(Guitar guitar) {
         stockForSale.remove(guitar);
+    }
+
+    public int markUp(Instrument instrument) {
+        int buyPrice = instrument.getBuyvalue();
+        int sellPrice = instrument.getSellvalue();
+        return sellPrice - buyPrice;
     }
 }
